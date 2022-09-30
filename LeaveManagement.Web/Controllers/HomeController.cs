@@ -1,4 +1,5 @@
 ﻿using LeaveManagement.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -18,6 +19,8 @@ namespace LeaveManagement.Web.Controllers
             return View();
         }
 
+        // wymaganie autoryzacji (logowania) na akcje
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();
